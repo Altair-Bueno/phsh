@@ -20,7 +20,7 @@ function phsh-log {
     phsh_log_level="${phsh_log_level^^}"
 
     if [[ "${PHSH_LOG_LEVEL_MAP["$log_level"]}" -ge "${PHSH_LOG_LEVEL_MAP["$phsh_log_level"]}" ]]; then
-        local log_level_name="${PHSH_LOG_LEVEL}" funcname_caller="${PHSH_META_CALLER:-"${FUNCNAME[1]}"}"
+        local funcname_caller="${PHSH_META_CALLER:-"${FUNCNAME[1]}"}"
         printf "%s %s [%s]\t$format_string\n" \
             "$(TZ=utc date -Iseconds)" \
             "${log_level}" \
