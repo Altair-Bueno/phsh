@@ -1,0 +1,9 @@
+declare -- PHSH_REQUEST_VERB="GET"
+declare -- PHSH_REQUEST_PATH="/complex/headers?foo=\"bar,baz\"&weird=val%2C"
+declare -- PHSH_REQUEST_VERSION="HTTP/1.1"
+declare -- PHSH_REQUEST_PATHNAME="/complex/headers"
+declare -- PHSH_REQUEST_HASH=""
+declare -- PHSH_REQUEST_SEARCH="?foo=\"bar,baz\"&weird=val%2C"
+declare -- PHSH_REQUEST_BODY=""
+declare -A PHSH_REQUEST_HEADERS=([x-strange]="\"value,with,commas\"" [host]="example.com" [x-escaped]="value\\with\\backslashes" [user-agent]="\"TestSuite/1.0,Extra\"" )
+declare -A PHSH_REQUEST_SEARCH_PARAMS=([weird]="val," [foo]="\"bar,baz\"" )

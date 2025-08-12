@@ -1,0 +1,7 @@
+POST /special/body HTTP/1.1
+Host: example.com
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 37
+User-Agent: TestSuite/1.0
+
+data=hello%2C+world%21%22%27%3B%3A%2F%5C

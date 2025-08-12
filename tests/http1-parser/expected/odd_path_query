@@ -1,0 +1,9 @@
+declare -- PHSH_REQUEST_VERB="GET"
+declare -- PHSH_REQUEST_PATH="/odd/path;param?weird=\"strange,value\"&x=1,2,3"
+declare -- PHSH_REQUEST_VERSION="HTTP/1.1"
+declare -- PHSH_REQUEST_PATHNAME="/odd/path;param"
+declare -- PHSH_REQUEST_HASH=""
+declare -- PHSH_REQUEST_SEARCH="?weird=\"strange,value\"&x=1,2,3"
+declare -- PHSH_REQUEST_BODY=""
+declare -A PHSH_REQUEST_HEADERS=([accept]="*/*" [host]="example.com" [user-agent]="TestSuite/1.0" )
+declare -A PHSH_REQUEST_SEARCH_PARAMS=([weird]="\"strange,value\"" [x]="1,2,3" )

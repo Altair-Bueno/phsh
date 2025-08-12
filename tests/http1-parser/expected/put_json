@@ -1,0 +1,9 @@
+declare -- PHSH_REQUEST_VERB="PUT"
+declare -- PHSH_REQUEST_PATH="/api/update"
+declare -- PHSH_REQUEST_VERSION="HTTP/1.1"
+declare -- PHSH_REQUEST_PATHNAME="/api/update"
+declare -- PHSH_REQUEST_HASH=""
+declare -- PHSH_REQUEST_SEARCH=""
+declare -- PHSH_REQUEST_BODY="{\"id\":42,\"ok\":true}"
+declare -A PHSH_REQUEST_HEADERS=([content-type]="application/json" [content-length]="18" [host]="example.com" [user-agent]="TestSuite/1.0" )
+declare -A PHSH_REQUEST_SEARCH_PARAMS=()

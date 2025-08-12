@@ -1,0 +1,7 @@
+PUT /api/update HTTP/1.1
+Host: example.com
+Content-Type: application/json
+Content-Length: 18
+User-Agent: TestSuite/1.0
+
+{"id":42,"ok":true}
