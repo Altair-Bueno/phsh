@@ -2,11 +2,12 @@ set -euo pipefail
 
 # Log framework
 ###############################################################################
-declare -gA PHSH_LOG_LEVEL_MAP=()
-PHSH_LOG_LEVEL_MAP[ERROR]=4
-PHSH_LOG_LEVEL_MAP[WARN]=3
-PHSH_LOG_LEVEL_MAP[INFO]=2
-PHSH_LOG_LEVEL_MAP[DEBUG]=1
+declare -A PHSH_LOG_LEVEL_MAP=(
+    [ERROR]=4
+    [WARN]=3
+    [INFO]=2
+    [DEBUG]=1
+)
 
 function phsh-fatal {
     PHSH_META_CALLER="${PHSH_META_CALLER:-"${FUNCNAME[1]}"}"  phsh-log-error "$@"
