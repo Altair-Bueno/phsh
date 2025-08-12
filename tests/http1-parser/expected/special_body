@@ -5,5 +5,5 @@ declare -- PHSH_REQUEST_PATHNAME="/special/body"
 declare -- PHSH_REQUEST_HASH=""
 declare -- PHSH_REQUEST_SEARCH=""
 declare -- PHSH_REQUEST_BODY="data=hello%2C+world%21%22%27%3B%3A%2F%5C"
-declare -A PHSH_REQUEST_HEADERS=([content-type]="application/x-www-form-urlencoded" [content-length]="37" [host]="example.com" [user-agent]="TestSuite/1.0" )
+declare -A PHSH_REQUEST_HEADERS=([content-type]="application/x-www-form-urlencoded" [content-length]="40" [host]="example.com" [user-agent]="TestSuite/1.0" )
 declare -A PHSH_REQUEST_SEARCH_PARAMS=()

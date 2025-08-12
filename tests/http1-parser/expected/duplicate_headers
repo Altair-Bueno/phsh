@@ -5,5 +5,5 @@ declare -- PHSH_REQUEST_PATHNAME="/duplicate/header"
 declare -- PHSH_REQUEST_HASH=""
 declare -- PHSH_REQUEST_SEARCH=""
 declare -- PHSH_REQUEST_BODY="body=duplicate-header-test"
-declare -A PHSH_REQUEST_HEADERS=([x-test]="value3" [host]="example.com" [user-agent]="TestSuite/1.0" )
+declare -A PHSH_REQUEST_HEADERS=([content-length]="26" [x-test]="value3" [host]="example.com" [user-agent]="TestSuite/1.0" )
 declare -A PHSH_REQUEST_SEARCH_PARAMS=()
