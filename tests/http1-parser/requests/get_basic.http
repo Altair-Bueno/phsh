@@ -1,0 +1,4 @@
+GET /hello/world?foo=bar&baz=qux HTTP/1.1
+Host: example.com
+User-Agent: TestSuite/1.0
+Accept: */*

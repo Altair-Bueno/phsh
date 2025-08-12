@@ -1,0 +1,9 @@
+declare -- PHSH_REQUEST_VERB="POST"
+declare -- PHSH_REQUEST_PATH="/submit/form?token=abc123"
+declare -- PHSH_REQUEST_VERSION="HTTP/1.1"
+declare -- PHSH_REQUEST_PATHNAME="/submit/form"
+declare -- PHSH_REQUEST_HASH=""
+declare -- PHSH_REQUEST_SEARCH="?token=abc123"
+declare -- PHSH_REQUEST_BODY="name=John+Doe&email=john%40example.com"
+declare -A PHSH_REQUEST_HEADERS=([content-type]="application/x-www-form-urlencoded" [content-length]="27" [host]="example.com" [user-agent]="TestSuite/1.0" )
+declare -A PHSH_REQUEST_SEARCH_PARAMS=([token]="abc123" )

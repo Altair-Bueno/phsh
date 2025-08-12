@@ -1,0 +1,9 @@
+declare -- PHSH_REQUEST_VERB="GET"
+declare -- PHSH_REQUEST_PATH="/hello/world?foo=bar&baz=qux"
+declare -- PHSH_REQUEST_VERSION="HTTP/1.1"
+declare -- PHSH_REQUEST_PATHNAME="/hello/world"
+declare -- PHSH_REQUEST_HASH=""
+declare -- PHSH_REQUEST_SEARCH="?foo=bar&baz=qux"
+declare -- PHSH_REQUEST_BODY=""
+declare -A PHSH_REQUEST_HEADERS=([accept]="*/*" [host]="example.com" [user-agent]="TestSuite/1.0" )
+declare -A PHSH_REQUEST_SEARCH_PARAMS=([foo]="bar" [baz]="qux" )
