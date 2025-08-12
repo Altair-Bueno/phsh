@@ -3,13 +3,13 @@ name: HTTP/1.1 Parser Test Suite
 on:
   push:
     paths:
-      - "phsh/phsh.bash"
-      - "phsh/tests/http1_suite/**"
-      - ".github/workflows/http1_parser.yml"
+      - "phsh.bash"
+      - "tests/http1_suite/**"
+      - ".github/workflows/http1-parser.yml"
   pull_request:
     paths:
-      - "phsh/phsh.bash"
-      - "phsh/tests/http1_suite/**"
+      - "phsh.bash"
+      - "tests/http1_suite/**"
       - ".github/workflows/http1-parser.yml"
 
 jobs:
