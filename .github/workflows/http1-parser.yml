@@ -10,7 +10,7 @@ on:
     paths:
       - "phsh/phsh.bash"
       - "phsh/tests/http1_suite/**"
-      - ".github/workflows/http1_parser.yml"
+      - ".github/workflows/http1-parser.yml"
 
 jobs:
   test-http1-parser:
