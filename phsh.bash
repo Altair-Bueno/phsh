@@ -127,8 +127,14 @@ function phsh-http-request-parser {
         PHSH_REQUEST_HEADERS["$header_key"]="$header_value"
     done
 
-    # Get the request body
-    read -d $'\r\n' -r PHSH_REQUEST_BODY || phsh-log-debug "Request did not contain body"
+    # Get the request body, if present
+    if [[ -n "${PHSH_REQUEST_HEADERS[content-length]:+x}" ]]; then
+        local content_length="${PHSH_REQUEST_HEADERS[content-length]}"
+        declare -i content_length
+        read -d $'\r\n' -n $((content_length + 2)) -r PHSH_REQUEST_BODY
+    else
+        PHSH_REQUEST_BODY=""
+    fi
 
     # Break the path into components
     PHSH_REQUEST_PATHNAME="${PHSH_REQUEST_PATH%%\?*}"
@@ -157,9 +163,21 @@ function phsh-http-request-parser {
 }
 
 function phsh-http-process {
+    # Reset global variables for each request
     declare -A PHSH_REQUEST_HEADERS=()
     declare -A PHSH_REQUEST_SEARCH_PARAMS=()
+    PHSH_REQUEST_VERB=""
+    PHSH_REQUEST_PATH=""
+    PHSH_REQUEST_PATHNAME=""
+    PHSH_REQUEST_SEARCH=""
+    PHSH_REQUEST_HASH=""
+    PHSH_REQUEST_VERSION=""
+    PHSH_REQUEST_BODY=""
+
     declare -A PHSH_REPLY_HEADERS=()
+    PHSH_REPLY_STATUS_CODE=200
+    PHSH_REPLY_BODY=""
+    PHSH_REPLY_STREAM=""
 
     phsh-log-debug "Received a new request from %s" "$PHSH_REQUEST_IP"
 
@@ -198,5 +216,7 @@ function phsh-http-serve {
         phsh-http-process "$command" &
         # Close the socket file descriptor on the parent process
         exec {PHSH_SOCKET}<&-
+        unset PHSH_SOCKET
+        unset PHSH_REQUEST_IP
     done
 }
