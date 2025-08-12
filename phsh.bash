@@ -120,15 +120,15 @@ function phsh-http-request-parser {
         if [[ -z "$header_line" ]]; then
             break  # End of headers
         fi
-        IFS=":" read -r header_key header_value <<< "$header_line"
+        IFS=":" read -r header_key header_value <<<"$header_line"
         header_key="${header_key,,}"
-        header_value="${header_value%%[[:space:]]}"
-        header_value="${header_value##[[:space:]]}"
+        header_value="${header_value#"${header_value%%[![:space:]]*}"}"
+        header_value="${header_value%"${header_value##*[![:space:]]}"}"
         PHSH_REQUEST_HEADERS["$header_key"]="$header_value"
     done
 
     # Get the request body
-    IFS="" read -r PHSH_REQUEST_BODY
+    read -d $'\r\n' -r PHSH_REQUEST_BODY || phsh-log-debug "Request did not contain body"
 
     # Break the path into components
     PHSH_REQUEST_PATHNAME="${PHSH_REQUEST_PATH%%\?*}"
