@@ -1,0 +1,25 @@
+name: HTTP/1.1 Parser Test Suite
+
+on:
+  push:
+    paths:
+      - "phsh/phsh.bash"
+      - "phsh/tests/http1_suite/**"
+      - ".github/workflows/http1_parser.yml"
+  pull_request:
+    paths:
+      - "phsh/phsh.bash"
+      - "phsh/tests/http1_suite/**"
+      - ".github/workflows/http1_parser.yml"
+
+jobs:
+  test-http1-parser:
+    runs-on: ubuntu-latest
+    name: Run HTTP/1.1 parser test suite
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Install jq
+        run: sudo apt-get update && sudo apt-get install -y jq
+      - name: Run HTTP/1.1 parser tests
+        run: tests/http1-parser/run.sh
